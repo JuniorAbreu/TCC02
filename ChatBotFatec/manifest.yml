@@ -1,0 +1,24 @@
+---
+declared-services:
+  Conversation-FATEC:
+    label: conversation
+    plan:  free 
+applications:
+- name: ChatBotFATEC
+#  command: npm start
+#  random-route: true
+#  memory: 256M
+  path: target/ChatBotFATEC.war
+  memory: 256M
+  instances: 1
+  disk_quota: 1024M
+  domain: mybluemix.net
+  host: chatbotfatec2
+  buildpack: liberty-for-java
+  services:
+  - Conversation-FATEC
+  env:
+    IBM_JVM_LICENSE: L-PMAA-A3Z8P2
+    IBM_LIBERTY_LICENSE: L-SWIS-AEPPZP
+    JVM: openjdk
+    
